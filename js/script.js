@@ -10,7 +10,7 @@ document.addEventListener('touchmove' , function (ev){
 
 
 $(function(){
-  var pageArr = ["home","rundown","carship","wine","suit","shoes","sound","catering","location","contact"];
+  var pageArr = ["home","form","invitation","map","qrcode"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
