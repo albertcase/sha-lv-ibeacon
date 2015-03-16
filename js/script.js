@@ -8,7 +8,7 @@ document.addEventListener('touchmove' , function (ev){
 
 
 $(function(){
-  var pageArr = ["home","form","invitation","map","qrcode"];
+  var pageArr = ["home","form"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
@@ -39,7 +39,6 @@ function pageChange(){
         $('.'+pageArr[curArrIndex]).removeClass('page-next').addClass('page-active page-in');
 
         pageSlideOver();
-        //history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveNext = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
@@ -51,7 +50,6 @@ function pageChange(){
         $('.'+pageArr[curArrIndex]).removeClass('page-prev').addClass('page-active page-in');
 
         pageSlideOver();
-        //history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveClick = function(curshow,curclick){
         var curShowIndex = pageArr.indexOf(curshow);
@@ -67,7 +65,6 @@ function pageChange(){
         }
 
         pageSlideOver();
-        //history.pushState({"page": curclick}, "" , "?page="+curclick);
     }
 
 }
