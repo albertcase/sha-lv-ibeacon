@@ -5,7 +5,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
     padding: 0;
     margin: 0;
-    font-family: "SimSun";
+    font-family: "Microsoft YaHei";
 }
 a{
 	text-decoration:none;
@@ -116,6 +116,7 @@ body{
   top: 0;
   bottom: 0;
   height:100%;
+  background: #000;
 }
 
 .demo-test {
@@ -184,6 +185,7 @@ body{
   margin: 6px 0 0 0;
   font-size: 12px;
   display:inline-block;
+  letter-spacing: 2px;
 }
 
 /* introduction page */
@@ -201,6 +203,69 @@ body{
   margin: 6% 0 0 0;
   display: inline-block;
 }
+
+/* form page */
+.logo h1 {
+  
+  margin: 10% 0 0 0;
+  font-size: .4em;
+  color: #fff;
+  line-height: 130%;
+}
+#formval {
+  
+  margin: 10% 0 0 0;
+}
+#formval ul li{
+  font-size: .38em;
+  width:60%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #323232; 
+  margin: 5% 0 0 0;
+  position: relative;
+  left:20%;
+
+  
+}
+#formval a{
+  width: 60%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border:1px #4d4d4d solid;
+  color: #fff;
+  font-size: .5em;
+  display:inline-block;
+  margin-top: 5%;
+  letter-spacing: 10px;
+}
+.formtext{
+  margin: 20px 0 0 -10%;
+  position: relative;
+  z-index: 100;
+
+}
+.formtext input{
+  width:54%;
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+}
+.series {
+  position: absolute;
+  left: 0;
+  bottom: 4%;
+  width: 100%;
+  text-align: center;
+}
+
+/* qrcode page */
+.qrcodeCon{
+  margin: 10% 0 0 0;
+}
+
 
 /*.logo{
   width: 100%;
