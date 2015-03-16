@@ -266,6 +266,23 @@ body{
   margin: 10% 0 0 0;
 }
 
+/* map page */
+.map {
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+ 
+}
+.guide{
+  width: 100%;
+  line-height: 0;
+  margin: 2% 0 0 0;
+  overflow:auto;
+
+}
+
 
 /*.logo{
   width: 100%;
