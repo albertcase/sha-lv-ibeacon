@@ -8,7 +8,7 @@ document.addEventListener('touchmove' , function (ev){
 
 
 $(function(){
-  var pageArr = ["home","form"];
+  
   var pageArr = ["home","introduction","form","qrcode","map"];
   var $page = $('.page'),
       $menu = $('.menu li');
