@@ -1,6 +1,4 @@
-
-window.location.hash= '';
-	
+$("#main").animate({"opacity":1},600);
 
 document.addEventListener('touchmove' , function (ev){
 	ev.preventDefault();
@@ -30,11 +28,6 @@ function pageChange(){
         var curArrIndex = pageArr.indexOf(a.data("page"));
         curArrIndex++;
         if(curArrIndex>=pageArr.length)return false;
-        if(curArrIndex==2||curArrIndex==3||curArrIndex==4||curArrIndex==5||curArrIndex==6||curArrIndex==7){
-            $(".arr").attr("class","arr arrWhite");
-        }else{
-            $(".arr").attr("class","arr");
-        }
 
         if(curArrIndex>=pageArr.length-1){
             $(".arr").hide();
@@ -46,24 +39,19 @@ function pageChange(){
         $('.'+pageArr[curArrIndex]).removeClass('page-next').addClass('page-active page-in');
 
         pageSlideOver();
-        history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
+        //history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveNext = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
         curArrIndex--;
         if(curArrIndex<0)return false;
         $(".arr").show();
-        if(curArrIndex==2||curArrIndex==3||curArrIndex==4||curArrIndex==5||curArrIndex==6||curArrIndex==7){
-            $(".arr").attr("class","arr arrWhite");
-        }else{
-            $(".arr").attr("class","arr");
-        }
 
         a.removeClass('page-active').addClass('page-next page-out');
         $('.'+pageArr[curArrIndex]).removeClass('page-prev').addClass('page-active page-in');
 
         pageSlideOver();
-        history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
+        //history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveClick = function(curshow,curclick){
         var curShowIndex = pageArr.indexOf(curshow);
@@ -79,7 +67,7 @@ function pageChange(){
         }
 
         pageSlideOver();
-        history.pushState({"page": curclick}, "" , "?page="+curclick);
+        //history.pushState({"page": curclick}, "" , "?page="+curclick);
     }
 
 }
