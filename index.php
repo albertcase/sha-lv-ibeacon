@@ -100,8 +100,8 @@
           <img src="/images/map/mapTips1.png" />
           </p>
         </div>  
-        <div class="map">
-          <img src="/images/map/map1.png" width="80%"/>
+        <div class="mapcon">
+          <img src="/images/map/map1.png" />
         </div>  
       </div>
     </section>
