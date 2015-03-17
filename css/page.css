@@ -200,7 +200,7 @@ html,body{
 
 /* introduction page */
 .logo {
-  margin: 14% 0 0 0;
+  margin: 12% 0 0 0;
 }
 .intro {
   width: 100%;
@@ -216,11 +216,11 @@ html,body{
 
 /* form page */
 .logo h1 {
-  
   margin: 10% 0 0 0;
-  font-size: .4em;
+  font-size: 14px;
   color: #fff;
   line-height: 130%;
+  opacity: 0.9;
 }
 #formval {
   
@@ -231,7 +231,7 @@ html,body{
   width:60%;
   height: 40px;
   line-height: 40px;
-  background-color: #323232; 
+  background: rgba(252,252,252,0.1); 
   margin: 5% 0 0 0;
   position: relative;
   left:20%;
@@ -273,10 +273,14 @@ html,body{
 
 /* qrcode page */
 .qrcodeCon{
-  margin: 6% 0 0 0;
+  margin: 4% 0 0 0;
+  line-height: 0;
 }
 
-
+.qrcodeCon img:nth-child(2){
+  margin: 20px 0 0 0;
+  display: inline-block;
+}
 
 /* map page */
 .mapcon {

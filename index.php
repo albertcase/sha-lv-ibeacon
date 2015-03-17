@@ -1,4 +1,5 @@
 <?php
+/*
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
 include_once('./config/uUid.php');
@@ -18,8 +19,9 @@ if($rs){
 }else{
     $finish=0;
 }
-
-?>
+*/
+$id=1;$finish=0;
+?> 
 <!doctype html>
 <html>
 <head>
