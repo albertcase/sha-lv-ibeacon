@@ -147,7 +147,6 @@ if($rs){
       }); 
     });
   })(jQuery);
-  /*alert(document.width);*/
 </script>
 
 </body>

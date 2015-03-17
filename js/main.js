@@ -13,9 +13,9 @@ var objScript = new Object({
                 return false;
            }
 
-           var curshow = $(".page-active").data("page");
-           pagechange.moveClick(curshow,'home');
-           //this.submitform(_name,_tel);
+           // var curshow = $(".page-active").data("page");
+           // pagechange.moveClick(curshow,'home');
+           this.submitform(_name,_tel);
 　　　　},
        maplink : function(){
           var curshow = $(".page-active").data("page");
