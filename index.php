@@ -1,4 +1,25 @@
+<?php
+include_once('./config/database.php');
+include_once('./config/Pdb.php');
+include_once('./config/uUid.php');
+$db = Pdb::getDb();
+$s = isset($_GET['s']) ? $_GET['s'] : "";
+$id = substr($s,4);
+if(isset($_COOKIE['lv_ibeacon_uuid'])){
+    $uuid = $_COOKIE['lv_ibeacon_uuid'];
+}else{
+    $uuid = getUuid::guid();
+    @setcookie("lv_ibeacon_uuid", $uuid, time()+3600*24*365, "/");
+}
+$sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
+$rs = $db->getOne($sql);
+if($rs){
+    $finish=1;
+}else{
+    $finish=0;
+}
 
+?>
 <!doctype html>
 <html>
 <head>
