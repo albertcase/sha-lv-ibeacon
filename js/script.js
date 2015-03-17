@@ -103,41 +103,12 @@ $menu.tap(function(event){
     var curclick = $(this).data("page");
     pagechange.moveClick(curshow,curclick);
     return false;
-})
+});
 
 
 // touch.on($page, 'touchstart', function(ev){
 //   ev.preventDefault();
 // });
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
