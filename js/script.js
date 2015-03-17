@@ -122,11 +122,11 @@ var objScript = new Object({
                 alert("名字不能为空！");
                 return false;
            }
-           if(!this.isPhoneNum(_tel)){
+           if(_tel!=="" && !this.isPhoneNum(_tel)){
                 alert("手机号码填写有误！");
                 return false;
            }
-           alert("提交成功!");
+
            var curshow = $(".page-active").data("page");
            pagechange.moveClick(curshow,'home');
 　　　　},

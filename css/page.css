@@ -147,15 +147,15 @@ body{
 }
 
 .page-in {
-  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
-  -ms-transition: transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
-  transition: transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -webkit-transition: -webkit-transform 600ms cubic-bezier(0.42, 0, 0.58, 1);
+  -ms-transition: transform 600ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 600ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .page-out {
-  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.42, 0, 0.58, 1);
-  -ms-transition: transform 200ms cubic-bezier(0.42, 0, 0.58, 1);
-  transition: transform 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -ms-transition: transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 500ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 
@@ -279,16 +279,22 @@ body{
   bottom: 0%;
   width: 100%;
   text-align: center;
- 
+  line-height: 0;
 }
 .guide{
   width: 100%;
   line-height: 0;
   margin: 2% 0 0 0;
   overflow:auto;
+  position: relative;
 }
-
-
+.guide p{
+  float: left;
+  display: inline-block;
+}
+.guide p img{
+  height:60px;
+}
 
 
 
