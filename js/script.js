@@ -95,73 +95,7 @@ $menu.tap(function(event){
     var curclick = $(this).data("page");
     pagechange.moveClick(curshow,curclick);
     return false;
-})
-
-
-// touch.on($page, 'touchstart', function(ev){
-//   ev.preventDefault();
-// });
-
-  
-
-
-
-
-
-
-
-
-
-var objScript = new Object({
-       isPhoneNum : function(value){
-            return /^0?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(value);
-       },
-　　　　checkform : function (_name,_tel,curclick){
-
-　　　　　　 if(_name == ""){
-                alert("名字不能为空！");
-                return false;
-           }
-           if(_tel!=="" && !this.isPhoneNum(_tel)){
-                alert("手机号码填写有误！");
-                return false;
-           }
-
-           var curshow = $(".page-active").data("page");
-           pagechange.moveClick(curshow,'home');
-　　　　},
-       maplink : function(){
-          var curshow = $(".page-active").data("page");
-          pagechange.moveClick(curshow,'map');
-       },
-       qrcodelink : function(){
-          var curshow = $(".page-active").data("page");
-          pagechange.moveClick(curshow,'qrcode');
-       }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
