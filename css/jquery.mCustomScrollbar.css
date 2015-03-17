@@ -90,6 +90,7 @@ y-axis
 		bottom: 0;
 		right: 0; 
 		height: auto;
+		display: none;
 	}
 
 	.mCSB_scrollTools a + .mCSB_draggerContainer{ margin: 20px 0; }
@@ -147,7 +148,7 @@ x-axis
 
 	.mCSB_horizontal.mCSB_inside > .mCSB_container{
 		margin-right: 0;
-		margin-bottom: 30px;
+		/*margin-bottom: 30px;*/
 	}
 	
 	.mCSB_horizontal.mCSB_outside > .mCSB_container{ min-height: 100%; }

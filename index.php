@@ -1,3 +1,4 @@
+
 <?php
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
@@ -35,7 +36,7 @@ if($rs){
 	<script src="/js/zepto.js"></script>
   <script src="/js/touch.js"></script>
 </head>
-<body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>">
+<body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>" >
 <div id="heng"></div>
 <!-- <span class="arr"></span> -->
 
@@ -45,7 +46,7 @@ if($rs){
     <section class="page introduction page-active" data-page="introduction">
       <div class="demo-test"> 
         <div class="logo">
-          <img src="/images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="30%" />
         </div>
         <div class="intro" >
           <img src="/images/introduction/intro.png" width="75%" />
@@ -58,7 +59,7 @@ if($rs){
       <div class="demo-test">
        
         <div class="logo">
-          <img src="/images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="30%" />
           <h1>填写个人信息<br/>获取你的专属邀请函</h1>
         </div>
         <div class="form">
@@ -103,7 +104,8 @@ if($rs){
           <img src="/images/logo.png" width="34%" />
         </div>
         <div class="qrcodeCon">
-          <img src="/images/qrcode/qrcode.png" width="50%" />
+          <img src="/images/qrcode/qrcode.jpg" width="50%" />
+          <img src="/images/qrcode/click.png" width="50%" >
         </div>  
 
         <div class="series">
@@ -121,8 +123,8 @@ if($rs){
           <img src="/images/map/mapTips1.png" />
           </p>
         </div>  
-        <div class="map">
-          <img src="/images/map/map1.png" width="80%"/>
+        <div class="mapcon">
+          <img src="/images/map/map1.png" />
         </div>  
       </div>
     </section>
@@ -134,8 +136,9 @@ if($rs){
 
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
-  <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+ <script type="text/javascript">
   (function($){
     $(window).load(function(){  
       $("#content").mCustomScrollbar({
@@ -144,6 +147,7 @@ if($rs){
       }); 
     });
   })(jQuery);
+  /*alert(document.width);*/
 </script>
 
 </body>
