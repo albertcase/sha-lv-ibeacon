@@ -7,9 +7,15 @@ document.addEventListener('touchmove' , function (ev){
 
 
 
-$(function(){
+
+
+
+
+
+
   
-  var pageArr = ["home","introduction","form","qrcode","map"];
+  var pageArr = ["introduction","form"];
+  var pageArr2 = ["introduction","form","home","map","qrcode"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
@@ -23,12 +29,12 @@ $(function(){
   }
   
 
-
+var curmoveval = false;
 function pageChange(){
     this.movePrev = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
         curArrIndex++;
-        if(curArrIndex>=pageArr.length)return false;
+        if(curArrIndex>=pageArr.length||curmoveval)return false;
 
         if(curArrIndex>=pageArr.length-1){
             $(".arr").hide();
@@ -44,7 +50,7 @@ function pageChange(){
     this.moveNext = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
         curArrIndex--;
-        if(curArrIndex<0)return false;
+        if(curArrIndex<0||curmoveval)return false;
         $(".arr").show();
 
         a.removeClass('page-active').addClass('page-next page-out');
@@ -53,8 +59,9 @@ function pageChange(){
         pageSlideOver();
     },
     this.moveClick = function(curshow,curclick){
-        var curShowIndex = pageArr.indexOf(curshow);
-        var curClickIndex = pageArr.indexOf(curclick);
+        curmoveval=true;
+        var curShowIndex = pageArr2.indexOf(curshow);
+        var curClickIndex = pageArr2.indexOf(curclick);
         if(curShowIndex === curClickIndex)return false;
 
         if(curShowIndex > curClickIndex){
@@ -96,7 +103,51 @@ $menu.tap(function(event){
 // });
 
   
+
+
+
+
+
+
+
+
+
+var objScript = new Object({
+       isPhoneNum : function(value){
+            return /^0?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(value);
+       },
+　　　　checkform : function (_name,_tel,curclick){
+
+　　　　　　 if(_name == ""){
+                alert("名字不能为空！");
+                return false;
+           }
+           if(!this.isPhoneNum(_tel)){
+                alert("手机号码填写有误！");
+                return false;
+           }
+           alert("提交成功!");
+           var curshow = $(".page-active").data("page");
+           pagechange.moveClick(curshow,'home');
+　　　　}
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

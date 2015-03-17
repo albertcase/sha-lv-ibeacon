@@ -15,78 +15,63 @@
 </head>
 <body>
 <div id="heng"></div>
+<<<<<<< HEAD:index.html
 <!-- <span class="arr"></span> -->
+=======
+>>>>>>> fd953b68cdd5c60437e34baef6d8998efcebf279:index.php
 
 <div id="main" class="wrap-page">
-    <section class="page home page-active" data-page="home">
-      <div class="demo-test">
-       
-        <div class="titleImg">
-          <img src="images/home/homeBg.jpg" width="100%" />
-          <img src="images/home/homeIntro.png" width="80%" />
-          <p><a href="javascript:;">立即前往</a><p>
-          <p><a href="javascript:;">一键关注</a></p>
-        </div>
-        <!-- <div class="logo">
-        </div> -->
-        <!-- <div class="homeIntro">
 
-        </div> -->
-
-      </div>
-    </section>
-
-    
-
-    <section class="page introduction page-next" data-page="introduction">
+    <section class="page introduction page-active" data-page="introduction">
       <div class="demo-test">
         <div class="logo">
-          <img src="images/logo.png" width="30%" />
+          <img src="images/logo.png" width="25%" />
         </div>
         <div class="intro" >
           <img src="images/introduction/intro.png" width="75%" />
         </div>
-        <div class="up">
-          <img src="images/introduction/up.png" width="50%" />
-        </div>    
+        <div class="arr"></div>    
       </div>
     </section>
 
-  
     <section class="page form page-next" data-page="form">
       <div class="demo-test">
        
         <div class="logo">
-          <img src="images/logo.png" width="30%" />
+          <img src="images/logo.png" width="25%" />
           <h1>填写个人信息<br/>获取你的专属邀请函</h1>
         </div>
         <div class="form">
           <form name="formval" id="formval">
-            
             <ul>
               <li>  
                 <span class="formtext">姓名：
                   <input type="text" id="name" placeholder="" name="name" data-role="none">
                 </span>
               </li>
-  
               <li>     
                 <span class="formtext">电话：
                   <input type="tel" id="mobile" placeholder="" name="mobile" maxlength="11" data-role="none">
                 </span>         
               </li>
-              
-              <p><a href="javascript:;">提交</a><p>
-               
-              
+              <p><a href="javascript:objScript.checkform($('#name').val(),$('#mobile').val());">提交</a><p>
             </ul>
           </form>
         </div>
         <div class="series">
           <img src="images/series.png"  width="30%"/>
-        </div>  
+        </div>   
+      </div>
+    </section>
 
-        
+    <section class="page home page-next" data-page="home">
+      <div class="demo-test">
+        <div class="titleImg">
+          <img src="images/home/homeBg.jpg" width="100%" />
+          <img src="images/home/homeIntro.png" width="75%" />
+          <p><a href="javascript:;">立即前往</a><p>
+          <p><a href="javascript:;">一键关注</a></p>
+        </div>
       </div>
     </section>
 
