@@ -67,8 +67,8 @@
         <div class="titleImg">
           <img src="images/home/homeBg.jpg" width="100%" />
           <img src="images/home/homeIntro.png" width="75%" />
-          <p><a href="javascript:;">立即前往</a><p>
-          <p><a href="javascript:;">一键关注</a></p>
+          <p><a href="javascript:objScript.maplink();">立即前往</a><p>
+          <p><a href="javascript:objScript.qrcodelink();">一键关注</a></p>
         </div>
       </div>
     </section>

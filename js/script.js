@@ -129,7 +129,15 @@ var objScript = new Object({
            alert("提交成功!");
            var curshow = $(".page-active").data("page");
            pagechange.moveClick(curshow,'home');
-　　　　}
+　　　　},
+       maplink : function(){
+          var curshow = $(".page-active").data("page");
+          pagechange.moveClick(curshow,'map');
+       },
+       qrcodelink : function(){
+          var curshow = $(".page-active").data("page");
+          pagechange.moveClick(curshow,'qrcode');
+       }
 });
 
 
