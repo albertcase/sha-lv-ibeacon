@@ -11,22 +11,25 @@ $s=isset($_GET['s'])?$_GET['s']:"";
  	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
 	<meta name="format-detection"content="telphone=no"/>
 	<title>路易威登</title>
-  <link rel="stylesheet" type="text/css" href="css/page.css" />
-	<script src="js/zepto.js"></script>
-  <script src="js/touch.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/page.css" />
+  <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css" />
+	<script src="/js/zepto.js"></script>
+  <script src="/js/touch.js"></script>
 </head>
 <body>
 <div id="heng"></div>
+<!-- <span class="arr"></span> -->
+
 
 <div id="main" class="wrap-page">
 
     <section class="page introduction page-active" data-page="introduction">
-      <div class="demo-test">
+      <div class="demo-test"> 
         <div class="logo">
-          <img src="images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="25%" />
         </div>
         <div class="intro" >
-          <img src="images/introduction/intro.png" width="80%" />
+          <img src="/images/introduction/intro.png" width="75%" />
         </div>
         <div class="arr"></div>    
       </div>
@@ -36,7 +39,7 @@ $s=isset($_GET['s'])?$_GET['s']:"";
       <div class="demo-test">
        
         <div class="logo">
-          <img src="images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="25%" />
           <h1>填写个人信息<br/>获取你的专属邀请函</h1>
         </div>
         <div class="form">
@@ -57,7 +60,7 @@ $s=isset($_GET['s'])?$_GET['s']:"";
           </form>
         </div>
         <div class="series">
-          <img src="images/series.png"  width="30%"/>
+          <img src="/images/series.png"  width="30%"/>
         </div>   
       </div>
     </section>
@@ -65,10 +68,10 @@ $s=isset($_GET['s'])?$_GET['s']:"";
     <section class="page home page-next" data-page="home">
       <div class="demo-test">
         <div class="titleImg">
-          <img src="images/home/homeBg.jpg" width="100%" />
-          <img src="images/home/homeIntro.png" width="75%" />
-          <p><a href="javascript:;">立即前往</a><p>
-          <p><a href="javascript:;">一键关注</a></p>
+          <img src="/images/home/homeBg.jpg" width="100%" />
+          <img src="/images/home/homeIntro.png" width="75%" />
+          <p><a href="javascript:objScript.maplink();">立即前往</a><p>
+          <p><a href="javascript:objScript.qrcodelink();">一键关注</a></p>
         </div>
       </div>
     </section>
@@ -78,14 +81,14 @@ $s=isset($_GET['s'])?$_GET['s']:"";
       <div class="demo-test">
         
         <div class="logo">
-          <img src="images/logo.png" width="34%" />
+          <img src="/images/logo.png" width="34%" />
         </div>
         <div class="qrcodeCon">
-          <img src="images/qrcode/qrcode.png" width="50%" />
+          <img src="/images/qrcode/qrcode.png" width="50%" />
         </div>  
 
         <div class="series">
-          <img src="images/series.png"  width="30%"/>
+          <img src="/images/series.png"  width="30%"/>
         </div> 
       </div>
     </section>
@@ -94,11 +97,13 @@ $s=isset($_GET['s'])?$_GET['s']:"";
     <section class="page map page-next" data-page="map">
       <div class="demo-test">
        
-        <div class="guide">
-          <img src="images/map/mapTips1.png" />
+        <div class="guide" id="content">
+          <p>
+          <img src="/images/map/mapTips1.png" />
+          </p>
         </div>  
         <div class="map">
-          <img src="images/map/map.png" width="80%"/>
+          <img src="/images/map/map1.png" width="80%"/>
         </div>  
       </div>
     </section>
@@ -108,6 +113,19 @@ $s=isset($_GET['s'])?$_GET['s']:"";
   </div>
 
 
- <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+  <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript">
+  (function($){
+    $(window).load(function(){  
+      $("#content").mCustomScrollbar({
+          axis:"x",
+          advanced:{autoExpandHorizontalScroll:true},
+      }); 
+    });
+  })(jQuery);
+</script>
+
 </body>
 </html>
