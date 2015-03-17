@@ -15,10 +15,8 @@
 </head>
 <body>
 <div id="heng"></div>
-<<<<<<< HEAD:index.html
 <!-- <span class="arr"></span> -->
-=======
->>>>>>> fd953b68cdd5c60437e34baef6d8998efcebf279:index.php
+
 
 <div id="main" class="wrap-page">
 
