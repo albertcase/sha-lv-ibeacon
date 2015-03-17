@@ -122,7 +122,7 @@ if($rs){
           </p>
         </div>  
         <div class="mapcon">
-          <img src="/images/map/map1.png" />
+          <img src="/images/map/map1.png" width="100%" />
         </div>  
       </div>
     </section>
@@ -134,8 +134,9 @@ if($rs){
 
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
-  <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript">
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+ <script type="text/javascript">
   (function($){
     $(window).load(function(){  
       $("#content").mCustomScrollbar({

@@ -286,26 +286,18 @@ html,body{
   width: 100%;
   text-align: center;
   line-height: 0;
-  height:90%;
+  background: red;
 }
 .guide{
   width: 100%;
   line-height: 0;
   margin: 2% 0 0 0;
   overflow:auto;
-  height:67px;
+  height:8%;
   position: relative;
-}
-.guide p{
-  height:100%;
-}
-.guide p img{
-  height:67px;
+  background: green;
 }
 
-.mapcon img{
-  height:100%;
-}
 
 
 
