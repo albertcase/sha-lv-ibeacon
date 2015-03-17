@@ -24,7 +24,7 @@
     <section class="page introduction page-active" data-page="introduction">
       <div class="demo-test"> 
         <div class="logo">
-          <img src="/images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="30%" />
         </div>
         <div class="intro" >
           <img src="/images/introduction/intro.png" width="75%" />
@@ -37,7 +37,7 @@
       <div class="demo-test">
        
         <div class="logo">
-          <img src="/images/logo.png" width="25%" />
+          <img src="/images/logo.png" width="30%" />
           <h1>填写个人信息<br/>获取你的专属邀请函</h1>
         </div>
         <div class="form">
@@ -82,7 +82,8 @@
           <img src="/images/logo.png" width="34%" />
         </div>
         <div class="qrcodeCon">
-          <img src="/images/qrcode/qrcode.png" width="50%" />
+          <img src="/images/qrcode/qrcode.jpg" width="50%" />
+          <img src="/images/qrcode/click.png" width="50%" >
         </div>  
 
         <div class="series">
@@ -123,6 +124,7 @@
       }); 
     });
   })(jQuery);
+  /*alert(document.width);*/
 </script>
 
 </body>
