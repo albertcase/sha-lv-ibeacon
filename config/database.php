@@ -8,7 +8,7 @@ class database {
 	const dbType	=	'mysql';
 	const dbHost	=	'localhost';
 	const dbport	=	'';
-	const dbName	=	'lancaster';
+	const dbName	=	'lv_ibeacon';
 	const dbUser	=	'root';
 	const dbPass	=	'';
 	const dbCharset = 	'UTF8';
