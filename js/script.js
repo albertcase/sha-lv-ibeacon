@@ -9,7 +9,7 @@ document.addEventListener('touchmove' , function (ev){
 
 $(function(){
   
-  var pageArr = ["home","introduction","form","qrcode","map"];
+  var pageArr = ["introduction","form","home"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
@@ -97,6 +97,42 @@ $menu.tap(function(event){
 
   
 });
+
+
+
+
+
+
+
+var checkform = new Object({
+　　　　_count : 0,
+　　　　m1 : function (){
+　　　　　　//...
+　　　　},
+　　　　m2 : function (){
+　　　　　　//...
+　　　　}
+});
+
+module1.m1();
+
+var checkform = {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
