@@ -305,10 +305,67 @@ html,body{
   float: left;
   display: inline-block;
 }
-.guide img{
-  height:80px;
+
+.floor li{
+  float: left;
+  display: inline-block;
 }
 
+.floor li span{
+  background: #2e2e2e;
+  border-radius: 6px;
+  color: #fff;
+  padding: 9px 15px 0 15px;
+  float: left;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  height:70px;
+  margin: 6px;
+  position: relative;
+}
+
+.floor li span.curfloor{
+  width: 70px;
+  height:70px;
+  padding: 0;
+  line-height: 70px;
+  font-size: 38px;
+  text-align: center;
+  color: #ff0015;
+  background: #fff;
+}
+
+.floor li span.curfloor.hover{
+  background: #ff0015;
+  color: #fff;
+}
+
+.floor li span em{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #ea0115;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+}
+
+
+.floor li span.floorArr{
+  width: 90px;
+  height:auto;
+  background: none;
+  border-radius: 0;
+}
+
+.floor li span.floorArr img{
+  margin: 16px 0 0 0;
+  display: inline-block;
+}
 
 /* ---------- 内容样式区域end ---------- */
 

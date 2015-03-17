@@ -1,26 +1,4 @@
 
-<?php
-include_once('./config/database.php');
-include_once('./config/Pdb.php');
-include_once('./config/uUid.php');
-$db = Pdb::getDb();
-$s = isset($_GET['s']) ? $_GET['s'] : "";
-$id = substr($s,4);
-if(isset($_COOKIE['lv_ibeacon_uuid'])){
-    $uuid = $_COOKIE['lv_ibeacon_uuid'];
-}else{
-    $uuid = getUuid::guid();
-    @setcookie("lv_ibeacon_uuid", $uuid, time()+3600*24*365, "/");
-}
-$sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
-$rs = $db->getOne($sql);
-if($rs){
-    $finish=1;
-}else{
-    $finish=0;
-}
-
-?>
 <!doctype html>
 <html>
 <head>
@@ -119,9 +97,14 @@ if($rs){
       <div class="demo-test">
        
         <div class="guide" id="content">
-          <p>
-          <img src="/images/map/mapTips1.png" />
-          </p>
+          <ul class="floor">
+            <li>
+                <span class="curfloor hover">B1</span><span><em>1</em>向前<br />100米<br />左拐</span><span><em>2</em>前往<br />
+                三号电梯<br />
+                上行</span><span class="floorArr"><img src="/images/map/stepArr.png" width="100%" /></span>
+                <span class="curfloor">1F</span><span><em>3</em>左拐<br />100米</span>
+            </li>
+          <ul>
         </div>  
         <div class="mapcon">
           <img src="/images/map/map1.png" />
