@@ -1,4 +1,6 @@
-
+<?php
+$s=isset($_GET['s'])?$_GET['s']:"";
+?>
 <!doctype html>
 <html>
 <head>
@@ -96,7 +98,7 @@
           <img src="images/map/mapTips1.png" />
         </div>  
         <div class="map">
-          <img src="images/map/map1.png" width="80%"/>
+          <img src="images/map/map.png" width="80%"/>
         </div>  
       </div>
     </section>
