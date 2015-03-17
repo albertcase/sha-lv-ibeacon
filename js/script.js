@@ -109,16 +109,3 @@ $menu.tap(function(event){
 // touch.on($page, 'touchstart', function(ev){
 //   ev.preventDefault();
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
