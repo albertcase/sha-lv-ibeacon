@@ -139,12 +139,159 @@ $id=1;$finish=0;
 
   </div>
 
+<script>
+  //script.js
+  var curFinish = $('body').data("finish");
+var curId = $('body').data("id");
 
-<script type="text/javascript" src="/js/script.js"></script>
+
+
+$("#main").animate({"opacity":1},600);
+
+document.addEventListener('touchmove' , function (ev){
+  ev.preventDefault();
+  return false;
+} , false)
+
+  if(curFinish==1){
+    var pageArr = ["introduction","home"];
+  }else{
+    var pageArr = ["introduction","form"];
+  }
+  var pageArr2 = ["introduction","form","home","map","qrcode"];
+  var $page = $('.page'),
+      $menu = $('.menu li');
+  
+  function pageSlideOver(){
+    $('.page-out').live('transitionend', function(){
+        $(this).removeClass('page-out');
+    });
+    $('.page-in').live('transitionend', function(){
+        $(this).removeClass('page-in');
+    });
+  }
+  
+
+var curmoveval = false;
+function pageChange(){
+    this.movePrev = function(a){
+        var curArrIndex = pageArr.indexOf(a.data("page"));
+        curArrIndex++;
+        if(curArrIndex>=pageArr.length||curmoveval)return false;
+
+        if(curArrIndex>=pageArr.length-1){
+            $(".arr").hide();
+        }else{
+            $(".arr").show();
+        }
+
+        a.removeClass('page-active').addClass('page-prev page-out');
+        $('.'+pageArr[curArrIndex]).removeClass('page-next').addClass('page-active page-in');
+
+        pageSlideOver();
+    },
+    this.moveNext = function(a){
+        var curArrIndex = pageArr.indexOf(a.data("page"));
+        curArrIndex--;
+        if(curArrIndex<0||curmoveval)return false;
+        $(".arr").show();
+
+        a.removeClass('page-active').addClass('page-next page-out');
+        $('.'+pageArr[curArrIndex]).removeClass('page-prev').addClass('page-active page-in');
+
+        pageSlideOver();
+    },
+    this.moveClick = function(curshow,curclick){
+        curmoveval=true;
+        var curShowIndex = pageArr2.indexOf(curshow);
+        var curClickIndex = pageArr2.indexOf(curclick);
+        if(curShowIndex === curClickIndex)return false;
+
+        if(curShowIndex > curClickIndex){
+          $("."+curshow).removeClass('page-active').addClass('page-next page-out');
+          $('.'+curclick).removeClass('page-prev').addClass('page-active page-in');
+        }else{
+          $("."+curshow).removeClass('page-active').addClass('page-prev page-out');
+          $('.'+curclick).removeClass('page-next').addClass('page-active page-in');
+        }
+
+        pageSlideOver();
+    }
+
+}
+
+var pagechange = new pageChange();
+
+
+$page.swipeUp(function(ev){
+    pagechange.movePrev($(this));
+    ev.preventDefault();
+})
+
+$page.swipeDown(function(ev){
+    pagechange.moveNext($(this));
+    ev.preventDefault();
+})
+
+$menu.tap(function(event){
+    var curshow = $(".page-active").data("page");
+    var curclick = $(this).data("page");
+    pagechange.moveClick(curshow,curclick);
+    return false;
+});
+</script>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
- <script type="text/javascript">
+<script>
+  //main.js
+var objScript = new Object({
+       isPhoneNum : function(value){
+            return /^0?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(value);
+       },
+　　　　checkform : function (_name,_tel){
+　　　　　　 if(_name == ""){
+                alert("名字不能为空！");
+                return false;
+           }
+           if(_tel!=="" && !this.isPhoneNum(_tel)){
+                alert("手机号码填写有误！");
+                return false;
+           }
+
+           var curshow = $(".page-active").data("page");
+           pagechange.moveClick(curshow,'home');
+           //this.submitform(_name,_tel);
+　　　　},
+       maplink : function(){
+          var curshow = $(".page-active").data("page");
+          pagechange.moveClick(curshow,'map');
+       },
+       qrcodelink : function(){
+          var curshow = $(".page-active").data("page");
+          pagechange.moveClick(curshow,'qrcode');
+       },
+       submitform : function(usename,usemobile){
+          $.ajax({
+              type: "POST",
+              url: "/Request.php?model=finish",
+              data: {
+                   "name": usename,"mobile":usemobile
+              },
+              dataType:"json",
+              success: function(data){
+                 if(data.code==1){
+                    var curshow = $(".page-active").data("page");
+                    pagechange.moveClick(curshow,'home');
+                 }else if(data.code==0){
+                    alert(data.msg);
+                 }
+              }
+          })
+       }
+});
+
+</script>
+<script type="text/javascript">
   (function($){
     $(window).load(function(){  
       $("#content").mCustomScrollbar({
@@ -154,6 +301,5 @@ $id=1;$finish=0;
     });
   })(jQuery);
 </script>
-
 </body>
 </html>
