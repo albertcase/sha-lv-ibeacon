@@ -4,7 +4,6 @@ var objScript = new Object({
             return /^0?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(value);
        },
 　　　　checkform : function (_name,_tel){
-
 　　　　　　 if(_name == ""){
                 alert("名字不能为空！");
                 return false;
@@ -14,7 +13,9 @@ var objScript = new Object({
                 return false;
            }
 
-           submitform(_name,_tel);
+           var curshow = $(".page-active").data("page");
+           pagechange.moveClick(curshow,'home');
+           //this.submitform(_name,_tel);
 　　　　},
        maplink : function(){
           var curshow = $(".page-active").data("page");
@@ -36,7 +37,7 @@ var objScript = new Object({
                  if(data.code==1){
                     var curshow = $(".page-active").data("page");
                     pagechange.moveClick(curshow,'home');
-                 }else(data.code==0){
+                 }else if(data.code==0){
                     alert(data.msg);
                  }
               }

@@ -1,3 +1,8 @@
+var curFinish = $('body').data("finish");
+var curId = $('body').data("id");
+
+
+
 $("#main").animate({"opacity":1},600);
 
 document.addEventListener('touchmove' , function (ev){
@@ -13,8 +18,11 @@ document.addEventListener('touchmove' , function (ev){
 
 
 
-  
-  var pageArr = ["introduction","form"];
+  if(curFinish==1){
+    var pageArr = ["introduction","home"];
+  }else{
+    var pageArr = ["introduction","form"];
+  }
   var pageArr2 = ["introduction","form","home","map","qrcode"];
   var $page = $('.page'),
       $menu = $('.menu li');

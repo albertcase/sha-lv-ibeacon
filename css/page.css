@@ -286,19 +286,28 @@ html,body{
   width: 100%;
   text-align: center;
   line-height: 0;
-  background: red;
+  float: left;
+  display: inline-block;
+  height: 80%;
 }
+
+.mapcon img{
+  height:100%;
+}
+
 .guide{
   width: 100%;
   line-height: 0;
   margin: 2% 0 0 0;
   overflow:auto;
-  height:8%;
   position: relative;
-  background: green;
+  height:20%;
+  float: left;
+  display: inline-block;
 }
-
-
+.guide img{
+  height:80px;
+}
 
 
 /* ---------- 内容样式区域end ---------- */

@@ -1,3 +1,4 @@
+
 <?php
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
@@ -35,7 +36,7 @@ if($rs){
 	<script src="/js/zepto.js"></script>
   <script src="/js/touch.js"></script>
 </head>
-<body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>">
+<body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>" >
 <div id="heng"></div>
 <!-- <span class="arr"></span> -->
 
@@ -123,7 +124,7 @@ if($rs){
           </p>
         </div>  
         <div class="mapcon">
-          <img src="/images/map/map1.png" width="100%" />
+          <img src="/images/map/map1.png" />
         </div>  
       </div>
     </section>
@@ -135,7 +136,7 @@ if($rs){
 
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
-<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
  <script type="text/javascript">
   (function($){
