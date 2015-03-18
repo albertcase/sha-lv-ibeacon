@@ -33,7 +33,6 @@ $id=1;$finish=0;
 	<meta name="format-detection"content="telphone=no"/>
 	<title>路易威登</title>
   <link rel="stylesheet" type="text/css" href="/css/page.css" />
-  <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css" />
 	<script src="/js/zepto.js"></script>
   <script src="/js/touch.js"></script>
 </head>
@@ -98,45 +97,6 @@ $id=1;$finish=0;
     </section>
 
     
-    <section class="page qrcode page-next" data-page="qrcode">
-      <div class="demo-test">
-        
-        <div class="logo">
-          <img src="/images/logo.png" width="34%" />
-        </div>
-        <div class="qrcodeCon">
-          <img src="/images/qrcode/qrcode.jpg" width="50%" />
-          <img src="/images/qrcode/click.png" width="50%" >
-        </div>  
-
-        <div class="series">
-          <img src="/images/series.png"  width="30%"/>
-        </div> 
-      </div>
-    </section>
-
-  
-    <section class="page map page-next" data-page="map">
-      <div class="demo-test">
-       
-        <div class="guide" id="content">
-          <ul class="floor">
-            <li>
-                <span class="curfloor hover">B1</span><span><em>1</em>向前<br />100米<br />左拐</span><span><em>2</em>前往<br />
-                三号电梯<br />
-                上行</span><span class="floorArr"><img src="/images/map/stepArr.png" width="100%" /></span>
-                <span class="curfloor">1F</span><span><em>3</em>左拐<br />100米</span>
-            </li>
-          <ul>
-        </div>  
-        <div class="mapcon">
-          <img src="/images/map/map1.png" />
-        </div>  
-      </div>
-    </section>
-
-    
-
   </div>
 
 <script>
@@ -158,7 +118,7 @@ document.addEventListener('touchmove' , function (ev){
   }else{
     var pageArr = ["introduction","form"];
   }
-  var pageArr2 = ["introduction","form","home","map","qrcode"];
+  var pageArr2 = ["introduction","form","home","qrcode"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
@@ -240,8 +200,6 @@ $menu.tap(function(event){
     return false;
 });
 </script>
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
   //main.js
 var objScript = new Object({
@@ -263,12 +221,12 @@ var objScript = new Object({
            //this.submitform(_name,_tel);
 　　　　},
        maplink : function(){
-          var curshow = $(".page-active").data("page");
-          pagechange.moveClick(curshow,'map');
+          window.location.href="/map-"+curId+".html"
+          // var curshow = $(".page-active").data("page");
+          // pagechange.moveClick(curshow,'map');
        },
        qrcodelink : function(){
-          var curshow = $(".page-active").data("page");
-          pagechange.moveClick(curshow,'qrcode');
+          window.location.href="/qrcode.html"
        },
        submitform : function(usename,usemobile){
           $.ajax({
@@ -295,34 +253,27 @@ var objScript = new Object({
 function orientationChange() {
     switch(window.orientation) {
     　　case 0:
-            $("#heng").hide();
+            document.getElementById('heng').style.display="none";
             break;
     　　case -90:
-            $("#heng").show();
+            document.getElementById('heng').style.display="block";
             break;
     　　case 90:
-            $("#heng").hide();
+            document.getElementById('heng').style.display="block";
             break;
     　　case 180:
-        　　$("#heng").show();
+        　　document.getElementById('heng').style.display="none";
         　　break;
     };
 
 };
+
 
 addEventListener('load', function(){
     orientationChange();
     window.onorientationchange = orientationChange;
 });
 
-  (function($){
-    $(window).load(function(){  
-      $("#content").mCustomScrollbar({
-          axis:"x",
-          advanced:{autoExpandHorizontalScroll:true},
-      }); 
-    });
-  })(jQuery);
 </script>
 </body>
 </html>
