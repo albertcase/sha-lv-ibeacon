@@ -264,11 +264,13 @@ html,body{
   color: #fff;
 }
 .series {
-  position: absolute;
+  /*position: absolute;
   left: 0;
-  bottom: 4%;
+  bottom: 4%;*/
   width: 100%;
   text-align: center;
+  margin: 10% 0 0 0;
+  display: inline-block;
 }
 
 /* qrcode page */
@@ -434,18 +436,21 @@ html,body{
 }
 
 
+
 /* 设备竖屏时调用该段css代码 */
-@media all and (orientation : portrait){
+/*@media all and (orientation : portrait){
 	#heng{
 		display: none;
 	}
-}
+}*/
 /* 设备横屏时调用该段css代码 */
-@media all and (orientation : landscape){
+/*@media all and (orientation : landscape){
 	#heng{
 		display: inline-block;
 	}
 }
+*/
+
 
 /* iphone 5 */
 @media only screen and (max-width: 320px) and (max-height:504px) {

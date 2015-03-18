@@ -292,6 +292,29 @@ var objScript = new Object({
 
 </script>
 <script type="text/javascript">
+function orientationChange() {
+    switch(window.orientation) {
+    　　case 0:
+            $("#heng").hide();
+            break;
+    　　case -90:
+            $("#heng").show();
+            break;
+    　　case 90:
+            $("#heng").hide();
+            break;
+    　　case 180:
+        　　$("#heng").show();
+        　　break;
+    };
+
+};
+
+addEventListener('load', function(){
+    orientationChange();
+    window.onorientationchange = orientationChange;
+});
+
   (function($){
     $(window).load(function(){  
       $("#content").mCustomScrollbar({
