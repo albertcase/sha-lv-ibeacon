@@ -1,5 +1,5 @@
 <?php
-/*
+
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
 include_once('./config/uUid.php');
@@ -19,8 +19,8 @@ if($rs){
 }else{
     $finish=0;
 }
-*/
-$id=1;$finish=0;
+
+// $id=1;$finish=0;
 ?> 
 <!doctype html>
 <html>
@@ -99,9 +99,9 @@ $id=1;$finish=0;
     
   </div>
 
-<script>
+<script type="text/javascript">
   //script.js
-  var curFinish = $('body').data("finish");
+var curFinish = $('body').data("finish");
 var curId = $('body').data("id");
 
 
@@ -118,7 +118,7 @@ document.addEventListener('touchmove' , function (ev){
   }else{
     var pageArr = ["introduction","form"];
   }
-  var pageArr2 = ["introduction","form","home","qrcode"];
+  var pageArr2 = ["introduction","form","home"];
   var $page = $('.page'),
       $menu = $('.menu li');
   
@@ -132,8 +132,23 @@ document.addEventListener('touchmove' , function (ev){
   }
   
 
+
+
+
 var curmoveval = false;
 function pageChange(){
+    this.GetQueryString = function(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return unescape(r[2]); return null;
+    },
+    this.hashfun = function(){
+        var curpageIndex = this.GetQueryString("page"); 
+        var curshow = $(".page-active").data("page");
+        if(curpageIndex){
+            pagechange.moveClick(curshow,curpageIndex);
+        }
+    },
     this.movePrev = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
         curArrIndex++;
@@ -149,6 +164,7 @@ function pageChange(){
         $('.'+pageArr[curArrIndex]).removeClass('page-next').addClass('page-active page-in');
 
         pageSlideOver();
+        history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveNext = function(a){
         var curArrIndex = pageArr.indexOf(a.data("page"));
@@ -160,6 +176,7 @@ function pageChange(){
         $('.'+pageArr[curArrIndex]).removeClass('page-prev').addClass('page-active page-in');
 
         pageSlideOver();
+        history.pushState({"page": pageArr[curArrIndex]}, "" , "?page="+pageArr[curArrIndex]);
     },
     this.moveClick = function(curshow,curclick){
         curmoveval=true;
@@ -176,11 +193,14 @@ function pageChange(){
         }
 
         pageSlideOver();
+        history.pushState({"page": curclick}, "" , "?page="+curclick);
     }
 
 }
 
 var pagechange = new pageChange();
+
+pagechange.hashfun()
 
 
 $page.swipeUp(function(ev){
@@ -200,7 +220,7 @@ $menu.tap(function(event){
     return false;
 });
 </script>
-<script>
+<script type="text/javascript">
   //main.js
 var objScript = new Object({
        isPhoneNum : function(value){
