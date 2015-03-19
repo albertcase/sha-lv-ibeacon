@@ -34,7 +34,7 @@ if(isset($_POST['model'])){
 			}
 			$tag=false;
 			$name=isset($_POST['name'])?$_POST['name']:$tag=true;
-			$mobile=isset($_POST['mobile'])?$_POST['mobile']:$tag=true;
+			$mobile=isset($_POST['mobile'])?$_POST['mobile']:"";
 			if($tag){
 				print json_encode(array("code"=>2,"msg"=>"请填写必填项"));
 				exit;
