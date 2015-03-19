@@ -16,11 +16,7 @@ if($id){
 }
 $sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
 $rs = $db->getOne($sql);
-if($rs){
-    $finish=1;
-}else{
-    $finish=0;
-}
+$finish = $rs ? 1 : 0;
 
 // $id=1;$finish=0;
 ?> 
