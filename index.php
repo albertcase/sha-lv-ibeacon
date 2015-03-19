@@ -99,6 +99,8 @@
   </div>
 
 <script type="text/javascript">
+
+
   //script.js
 var curFinish = $('body').data("finish");
 var curId = $('body').data("id");
