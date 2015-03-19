@@ -11,6 +11,9 @@ if(isset($_COOKIE['lv_ibeacon_uuid'])){
     $uuid = getUuid::guid();
     @setcookie("lv_ibeacon_uuid", $uuid, time()+3600*24*365, "/");
 }
+if($id){
+  $db->execute("insert into lv_ibeacon_pv set uuid=".$db->quote($uuid).",resource=".$db->quote($id));
+}
 $sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
 $rs = $db->getOne($sql);
 if($rs){
