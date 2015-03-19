@@ -1,33 +1,34 @@
-var curFinish = $('body').data("finish");
-var curId = $('body').data("id");
-
-
-
-$("#main").animate({"opacity":1},600);
+;(function($){
 
 document.addEventListener('touchmove' , function (ev){
   ev.preventDefault();
   return false;
 } , false)
 
-  if(curFinish==1){
-    var pageArr = ["introduction","home"];
-  }else{
-    var pageArr = ["introduction","form"];
-  }
-  var pageArr2 = ["introduction","form","home"];
-  var $page = $('.page'),
-      $menu = $('.menu li');
-  
-  function pageSlideOver(){
-    $('.page-out').live('transitionend', function(){
-        $(this).removeClass('page-out');
-    });
-    $('.page-in').live('transitionend', function(){
-        $(this).removeClass('page-in');
-    });
-  }
-  
+$("#main").animate({"opacity":1},600);
+var curFinish = $('body').data("finish");
+var curId = $('body').data("id");
+
+
+
+
+if(curFinish==1){
+  var pageArr = ["introduction","home"];
+}else{
+  var pageArr = ["introduction","form"];
+}
+var pageArr2 = ["introduction","form","home"];
+var $page = $('.page'),
+    $menu = $('.menu li');
+
+function pageSlideOver(){
+  $('.page-out').live('transitionend', function(){
+      $(this).removeClass('page-out');
+  });
+  $('.page-in').live('transitionend', function(){
+      $(this).removeClass('page-in');
+  });
+}
 
 
 
@@ -118,6 +119,10 @@ $menu.tap(function(event){
 });
 
 
+
+
+/* ------------- objScript ------------- */
+
 var objScript = {
        isPhoneNum : function(value){
             return /^0?(13[0-9]|15[012356789]|18[012356789]|14[57])[0-9]{8}$/.test(value);
@@ -132,8 +137,8 @@ var objScript = {
                 return false;
            }
 
-           // var curshow = $(".page-active").data("page");
-           // pagechange.moveClick(curshow,'home');
+          //var curshow = $(".page-active").data("page");
+          //pagechange.moveClick(curshow,'home');
           this.submitform(_name,_tel);
 　　　　},
        maplink : function(){
@@ -163,3 +168,24 @@ var objScript = {
           })
        }
 };
+
+
+$(".formsubmit").click(function(){
+    objScript.checkform($('#name').val(),$('#mobile').val());
+})
+
+$(".immediately").click(function(){
+    objScript.maplink();
+})
+
+$(".attention").click(function(){
+    objScript.qrcodelink();
+})
+
+
+
+
+
+})(Zepto);
+
+

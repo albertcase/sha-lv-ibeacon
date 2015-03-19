@@ -36,8 +36,8 @@ if($rs){
 	<title>路易威登</title>
   <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css" />
   <link rel="stylesheet" type="text/css" href="/css/page.css" />
-	<script src="/js/zepto.js"></script>
-  <script src="/js/touch.js"></script>
+	<script type="text/javascript" src="/js/zepto.js"></script>
+  <script type="text/javascript" src="/js/touch.js"></script>
 </head>
 <body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>" >
 <div id="heng"></div>
@@ -78,7 +78,7 @@ if($rs){
                   <input type="tel" id="mobile" placeholder="" name="mobile" maxlength="11" data-role="none">
                 </span>         
               </li>
-              <p><a href="javascript:objScript.checkform($('#name').val(),$('#mobile').val());">提交</a><p>
+              <p><a class="formsubmit" href="javascript:;">提交</a><p>
             </ul>
           </form>
         </div>
@@ -93,14 +93,13 @@ if($rs){
         <div class="titleImg">
           <img src="/images/home/homeBg.jpg" width="100%" />
           <img src="/images/home/homeIntro.png" width="75%" />
-          <p><a href="javascript:objScript.maplink();">立即前往</a></p>
-          <p><a href="javascript:objScript.qrcodelink();">一键关注</a></p>
+          <p><a class="immediately" href="javascript:;">立即前往</a></p>
+          <p><a class="attention" href="javascript:;">一键关注</a></p>
         </div>
       </div>
     </section>
 
   </div>
-
 
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript">
