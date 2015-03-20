@@ -137,9 +137,9 @@ var objScript = {
                 return false;
            }
 
-          var curshow = $(".page-active").data("page");
-          pagechange.moveClick(curshow,'home');
-          //this.submitform(_name,_tel);
+          // var curshow = $(".page-active").data("page");
+          // pagechange.moveClick(curshow,'home');
+          this.submitform(_name,_tel);
 　　　　},
        maplink : function(){
           window.location.href="/map-"+curId+".html"
