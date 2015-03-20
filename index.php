@@ -123,6 +123,16 @@ addEventListener('load', function(){
     window.onorientationchange = orientationChange;
 });
 
+
+</script>
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?b751a13184b796ac249b8a020fc0baf6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
 </body>
 </html>
