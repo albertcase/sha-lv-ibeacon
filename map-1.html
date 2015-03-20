@@ -52,11 +52,11 @@ $(".curfloor").click(function(){
   if($(this).hasClass("hover"))return false;
   $(".curfloor").removeClass("hover");
   $(this).addClass("hover");
+  $('#content').mCustomScrollbar('scrollTo',$(this)); 
   $(".floorChange img").hide();
   if($(this).index()==0){
     $(".floorChange img").eq($(this).index()).fadeIn();
   }else{
-    $('#content').mCustomScrollbar('scrollTo',$('#content').find('.mCSB_container').find('span:eq(3)')); 
     $(".floorChange img").eq(1).fadeIn();
   }  
 
