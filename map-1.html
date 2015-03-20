@@ -19,15 +19,16 @@
         <div class="guide" id="content">
           <ul class="floor">
             <li>
-                <span class="curfloor hover">B1</span><span><em>1</em>向前<br />100米<br />左拐</span><span><em>2</em>前往<br />
-                三号电梯<br />
-                上行</span><span class="floorArr"><img src="/images/map/stepArr.png" width="100%" /></span>
-                <span class="curfloor">1F</span><span><em>3</em>左拐<br />100米</span>
+                <span class="curfloor hover">B1</span><span class="textStaus-2"><em>1</em>向西80米<br />至扶梯上L1楼</span><span class="floorArr"><img src="/images/map/stepArr.png" width="100%" /></span>
+                <span class="curfloor">L1</span><span class="textStaus-2"><em>2</em>向西20米<br />至金桐东路</span>
+                <span class="textStaus-2"><em>3</em>向南200米<br />至LV店铺</span>
+                <span>到达LV店铺<br />询问店员<br />SERIES 2地址</span>
             </li>
           <ul>
         </div>  
-        <div class="mapcon">
-          <img src="/images/map/map1.png" />
+        <div class="mapcon floorChange">
+          <img src="/images/map/map1-a.png" style="display:inline-block;" />
+          <img src="/images/map/map1-b.png" />
         </div>
 
         <a href="javascript:history.go(-1);" class="prevBtn">上一页</a>
@@ -47,6 +48,21 @@
 })(jQuery);
 </script>
 <script type="text/javascript">
+$(".curfloor").click(function(){
+  if($(this).hasClass("hover"))return false;
+  $(".curfloor").removeClass("hover");
+  $(this).addClass("hover");
+  $(".floorChange img").hide();
+  if($(this).index()==0){
+    $(".floorChange img").eq($(this).index()).fadeIn();
+  }else{
+    $('#content').mCustomScrollbar('scrollTo',$('#content').find('.mCSB_container').find('span:eq(3)')); 
+    $(".floorChange img").eq(1).fadeIn();
+  }  
+
+})
+
+
 function orientationChange() {
     switch(window.orientation) {
     　　case 0:
