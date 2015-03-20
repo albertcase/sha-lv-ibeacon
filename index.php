@@ -1,4 +1,9 @@
 <?php
+if(date('Ymd') >= 20150321 && date('Ymd') <= 20150322){
+  $s = isset($_GET['s']) ? $_GET['s'] : "";
+  print '<span style="font-size:300px">' . $s . '</span>';
+  exit;
+}
 include_once('./config/database.php');
 include_once('./config/Pdb.php');
 include_once('./config/uUid.php');
@@ -13,6 +18,31 @@ if(isset($_COOKIE['lv_ibeacon_uuid'])){
 }
 if($id){
   $db->execute("insert into lv_ibeacon_pv set uuid=".$db->quote($uuid).",resource=".$db->quote($id));
+  if(in_array($id, array(13, 14, 15, 16, 17, 18))){
+    switch ($id) {
+      case '13':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#eighth';
+        break;
+      case '14':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#sixth';
+        break;
+      case '15':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#nine';
+        break;
+      case '16':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#second';
+        break;
+      case '17':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#third';
+        break;
+      case '18':  
+        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#seventh';
+        break;
+    }
+    Header("Location: " . $taget);
+    exit;
+  }
+
 }
 $sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
 $rs = $db->getOne($sql);
