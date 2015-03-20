@@ -48,7 +48,7 @@ $sql = "select id from lv_ibeacon_info where uuid=" . $db->quote($uuid);
 $rs = $db->getOne($sql);
 $finish = $rs ? 1 : 0;
 
-// $id=1;$finish=0;
+//$id=1;$finish=0;
 ?> 
 <!doctype html>
 <html>
