@@ -84,6 +84,7 @@ html,body{
 }
 
 
+
 .wrap-page{
   position:absolute;
   left:0;
@@ -196,13 +197,8 @@ html,body{
 }
 
 .prevBtn{
-  position: fixed;
-  left: 50%;
-  bottom:1em;
-  margin: 0 0 0 -20%;
+  margin: 1em 0 2em 0;
 }
-
-
 
 /* introduction page */
 .logo {
@@ -291,6 +287,11 @@ html,body{
 }
 
 /* map page */
+.map{
+  width: 100%;
+  text-align: center;
+}
+
 .mapcon {
   /*position: absolute;
   left: 0;
@@ -300,11 +301,11 @@ html,body{
   line-height: 0;
   float: left;
   display: inline-block;
-  height: 70%;
+  padding: 10px 0;
 }
 
 .mapcon img{
-  height:100%;
+  width:100%;
 }
 
 .guide{
