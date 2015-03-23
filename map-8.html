@@ -16,6 +16,23 @@
       overflow: auto;
       position: relative;
     }
+
+.mapcon {
+  /*position: absolute;
+  left: 0;
+  bottom: 0%;*/
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+  float: left;
+  display: inline-block;
+  position: relative;
+  height: auto;
+}
+
+.mapcon img{
+  width:98%;
+}
   </style>
 </head>
 <body>
@@ -32,7 +49,7 @@
             </li>
           <ul>
         </div>  
-        <div class="mapcon floorChange">
+        <div class="mapcon floorChange" id="triggerArea">
           <img src="/images/map/map1-a.png" style="display:inline-block;" />
           <img src="/images/map/map1-b.png" />
         </div>
@@ -40,6 +57,7 @@
         <a href="javascript:history.go(-1);" class="prevBtn">上一页</a>
 
     </section>
+<script type="text/javascript" src="/js/touch.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript">
@@ -92,7 +110,20 @@ addEventListener('load', function(){
     window.onorientationchange = orientationChange;
 });
 
+
+var target = document.getElementById("triggerArea");
+
+touch.on(target, 'swipeleft', function(ev){
+    $(".curfloor").eq(1).click();
+});
+
+touch.on(target, 'swiperight', function(ev){
+    $(".curfloor").eq(0).click();
+});
+
 </script>
+
+
 <script type="text/javascript">
 var _hmt = _hmt || [];
 (function() {
