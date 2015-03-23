@@ -290,6 +290,7 @@ html,body{
 .map{
   width: 100%;
   text-align: center;
+  height:100%;
 }
 
 .mapcon {
@@ -301,12 +302,22 @@ html,body{
   line-height: 0;
   float: left;
   display: inline-block;
-  padding: 10px 0;
+  position: relative;
+  overflow: hidden;
+  height: 67%;
+  margin: 6px 0;
 }
 
 .mapcon img{
   width:100%;
 }
+
+#hit{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 
 .guide{
   width: 100%;
