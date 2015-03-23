@@ -107,13 +107,17 @@
             document.getElementById("hit").addEventListener('touchmove',movemouse);  
         });  
         function movemouse(e){   
-          if (isdrag){   
-           var lval = tx + e.touches[0].pageX - x;  
-           var tval = ty + e.touches[0].pageY - y;  
-           $("#hit").css("left",lval);  
-           $("#hit").css("top",tval); 
-           return false;   
-           }   
+
+           if (isdrag){   
+               var lval = tx + e.touches[0].pageX - x;  
+               var tval = ty + e.touches[0].pageY - y; 
+               console.log(parseInt($("#hit").offset().top)-e.touches[0].pageY)
+               $("#hit").css("left",lval);  
+               $("#hit").css("top",tval);
+   
+               return false;   
+           }  
+           
         }   
          
         function selectmouse(e){   
