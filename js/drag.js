@@ -102,7 +102,7 @@
         $(function(){  
             document.getElementById("hit").addEventListener('touchend',function(){  
                 sdrag = false;  
-                if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+110 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
+                if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+122 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
                     $("#hit").css("left","0");  
                     $("#hit").css("top","0");
                 }
@@ -115,7 +115,7 @@
            if (isdrag){   
                var lval = tx + e.touches[0].pageX - x;  
                var tval = ty + e.touches[0].pageY - y; 
-               if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+110 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
+               if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+122 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
                     $("#hit").css("left","0");  
                     $("#hit").css("top","0");
                }else{
