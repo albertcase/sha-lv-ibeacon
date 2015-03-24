@@ -102,18 +102,31 @@
         $(function(){  
             document.getElementById("hit").addEventListener('touchend',function(){  
                 sdrag = false;  
+                if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+122 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
+                    $("#hit").css("left","0");  
+                    $("#hit").css("top","0");
+                }
             });  
             document.getElementById("hit").addEventListener('touchstart',selectmouse);  
             document.getElementById("hit").addEventListener('touchmove',movemouse);  
         });  
         function movemouse(e){   
-          if (isdrag){   
-           var lval = tx + e.touches[0].pageX - x;  
-           var tval = ty + e.touches[0].pageY - y;  
-           $("#hit").css("left",lval);  
-           $("#hit").css("top",tval); 
-           return false;   
-           }   
+
+           if (isdrag){   
+               var lval = tx + e.touches[0].pageX - x;  
+               var tval = ty + e.touches[0].pageY - y; 
+               if(parseInt($("#hit").offset().top) > parseInt($(".mapcon").css("height")) || parseInt($("#hit").offset().top) < -parseInt($("#hit").css("height"))+122 || parseInt($("#hit").offset().left) < -parseInt($("#hit").css("width"))+60){
+                    $("#hit").css("left","0");  
+                    $("#hit").css("top","0");
+               }else{
+                    $("#hit").css("left",lval);  
+                    $("#hit").css("top",tval);
+               }
+               
+   
+               return false;   
+           }  
+           
         }   
          
         function selectmouse(e){   
@@ -122,5 +135,6 @@
            x = e.touches[0].pageX; 
            ty = parseInt(document.getElementById("hit").style.top+0);   
            y = e.touches[0].pageY;   
+           
            return false;   
         } 

@@ -185,19 +185,19 @@ html,body{
 
 .titleImg a,.prevBtn{
   width: 40%;
-  height: 27px;
-  line-height: 27px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
   border:1px #4d4d4d solid;
   color: #fff;
-  margin: 6px 0 0 0;
+  margin: 6px 0 3px 0;
   font-size: 12px;
   display:inline-block;
   letter-spacing: 2px;
 }
 
 .prevBtn{
-  margin: 1em 0 2em 0;
+  margin: -1em 0 2em 0;
 }
 
 /* introduction page */
