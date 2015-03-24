@@ -18,29 +18,31 @@ if(isset($_COOKIE['lv_ibeacon_uuid'])){
 }
 if($id){
   $db->execute("insert into lv_ibeacon_pv set uuid=".$db->quote($uuid).",resource=".$db->quote($id));
+
   if(in_array($id, array(13, 14, 15, 16, 17, 18))){
     switch ($id) {
       case '13':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#eighth';
+        $taget = 'http://www.seriescampaign.com/rooms.php#eighth';
         break;
       case '14':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#sixth';
+        $taget = 'http://www.seriescampaign.com/rooms.php#sixth';
         break;
       case '15':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#nine';
+        $taget = 'http://www.seriescampaign.com/rooms.php#nine';
         break;
       case '16':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#second';
+        $taget = 'http://www.seriescampaign.com/rooms.php#second';
         break;
       case '17':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#third';
+        $taget = 'http://www.seriescampaign.com/rooms.php#third';
         break;
       case '18':  
-        $taget = 'http://www.seriescampaign.com/sitereveal/rooms.php#seventh';
+        $taget = 'http://www.seriescampaign.com/rooms.php#seventh';
         break;
     }
     Header("Location: " . $taget);
     exit;
+
   }
 
 }
@@ -120,7 +122,7 @@ $finish = $rs ? 1 : 0;
           <img src="/images/home/homeBg.jpg" width="100%" />
           <img src="/images/home/homeIntro.png" width="75%" />
           <p><a class="immediately" href="javascript:;">立即前往</a></p>
-          <p><a class="attention" href="javascript:;">一键关注</a></p>
+          <p><a class="attention" href="javascript:;">关注我们</a></p>
         </div>
       </div>
     </section>
