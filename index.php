@@ -120,7 +120,7 @@ $finish = $rs ? 1 : 0;
           <img src="/images/home/homeBg.jpg" width="100%" />
           <img src="/images/home/homeIntro.png" width="75%" />
           <p><a class="immediately" href="javascript:;">立即前往</a></p>
-          <p><a class="attention" href="javascript:;">一键关注</a></p>
+          <p><a class="attention" href="javascript:;">关注我们</a></p>
         </div>
       </div>
     </section>
