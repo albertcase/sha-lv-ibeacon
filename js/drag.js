@@ -1,10 +1,11 @@
- var reqAnimationFrame = (function () {
+    
+function aa(){
+    var reqAnimationFrame = (function () {
         return window[Hammer.prefixed(window, 'requestAnimationFrame')] || function (callback) {
             window.setTimeout(callback, 1000 / 60);
         };
     })();
 
-    var log = document.querySelector("#log");
     var el = document.querySelector("#hit");
 
     var START_X = Math.round((window.innerWidth - el.offsetWidth) / 2);
@@ -98,36 +99,42 @@
 
 
     var isdrag=false;   
-        var tx,x,ty,y;    
-        $(function(){  
-            document.getElementById("hit").addEventListener('touchend',function(){  
-                sdrag = false;  
-            });  
-            document.getElementById("hit").addEventListener('touchstart',selectmouse);  
-            document.getElementById("hit").addEventListener('touchmove',movemouse);  
+    var tx,x,ty,y;    
+    $(function(){  
+        document.getElementById("hit").addEventListener('touchend',function(){  
+            sdrag = false;  
         });  
-        function movemouse(e){   
+        document.getElementById("hit").addEventListener('touchstart',selectmouse);  
+        document.getElementById("hit").addEventListener('touchmove',movemouse);    
+    });  
+    function movemouse(e){   
 
-           if (isdrag){   
-               var lval = tx + e.touches[0].pageX - x;  
-               var tval = ty + e.touches[0].pageY - y; 
+       if (isdrag){   
+           var lval = tx + e.touches[0].pageX - x;  
+           var tval = ty + e.touches[0].pageY - y; 
 
-               
-                $("#hit").css("left",lval);  
-                $("#hit").css("top",tval);
-                
-               return false;   
-           }  
            
-        }   
-         
-        function selectmouse(e){   
-           isdrag = true;   
-           tx = parseInt(document.getElementById("hit").style.left+0);   
-           console.log(tx)
-           x = e.touches[0].pageX; 
-           ty = parseInt(document.getElementById("hit").style.top+0);   
-           y = e.touches[0].pageY;   
-
+            $("#hit").css("left",lval);  
+            $("#hit").css("top",tval);
+            
            return false;   
-        } 
+       }  
+       
+    }   
+     
+    function selectmouse(e){   
+       isdrag = true;   
+       tx = parseInt(document.getElementById("hit").style.left+0);   
+       x = e.touches[0].pageX; 
+       ty = parseInt(document.getElementById("hit").style.top+0);   
+       y = e.touches[0].pageY;   
+
+       return false;   
+    } 
+    
+}
+
+aa();
+
+
+

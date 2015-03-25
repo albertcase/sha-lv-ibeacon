@@ -17,10 +17,10 @@
       position: relative;
     }
 
-.mapcon {
-  /*position: absolute;
+/*.mapcon {
+  position: absolute;
   left: 0;
-  bottom: 0%;*/
+  bottom: 0%;
   width: 100%;
   text-align: center;
   line-height: 0;
@@ -29,18 +29,29 @@
   position: relative;
   height: auto;
   margin: 0;
+}*/
+
+.mapcon img,.imgArea{
+  display: inline-block;
+  float: left;
+}
+
+
+.imgArea p{
+  float: left;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 
 .mapcon img{
-  width:98%;
-  display: inline-block;
-  float: left;
+  position: absolute;
+  left: 7%;
+  top: 0;
 }
 
-.imgAre{
-  float: left;
-  display: inline-block;
-}
+
 
   </style>
 </head>
@@ -59,22 +70,27 @@
           <ul>
         </div>  
         <div class="mapcon floorChange" id="triggerArea">
-          <div class="imgAre">
-          <img src="/images/map/map1-a.png" style="display:inline-block;" />
+          <div class="imgArea">
+          <p>
+          <img src="/images/map/map1-a.png" id="hit" style="display:inline-block;" />
+          </p>
+          <p>
           <img src="/images/map/map1-b.png" />
+          </p>
           </div>
         </div>
 
         <a href="javascript:history.go(-1);" class="prevBtn">上一页</a>
 
     </section>
-<script type="text/javascript" src="/js/touch.js"></script>
+<!-- <script type="text/javascript" src="/js/touch.js"></script> -->
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 <script type="text/javascript">
 ;(function($){
-    $(".imgAre").css("width",parseInt($(document).width())*2);
-    $(".imgAre img").css("width",$(document).width());
+    $(".imgArea").css("width",parseInt($(document).width())*2);
+    $(".imgArea p").css({"width":$(document).width(),"height":$(".mapcon").css("height")});
 
     $(window).load(function(){  
       $("#content").mCustomScrollbar({
@@ -92,11 +108,19 @@ $(".curfloor").click(function(){
   $(this).addClass("hover");
   $('#content').mCustomScrollbar('scrollTo',$(this)); 
   
+  $(".imgArea img").removeAttr("style");
+  $(".imgArea img").removeAttr("class");
+  $(".imgArea img").removeAttr("id");
   if($(this).index()==0){
-    $(".imgAre").animate({"margin-left":-$(document).width()*0},900);
+    $(".imgArea").animate({"margin-left":-$(document).width()*0},900);
+     $(".imgArea img").eq(0).attr("id","hit");
   }else{
-    $(".imgAre").animate({"margin-left":-$(document).width()*1},900);
+    $(".imgArea").animate({"margin-left":-$(document).width()*1},900);
+    $(".imgArea img").eq(1).attr("id","hit");
   }
+
+  aa();
+  
   // $(".floorChange img").hide();
   // if($(this).index()==0){
   //   $(".floorChange img").eq($(this).index()).fadeIn();
@@ -132,18 +156,19 @@ addEventListener('load', function(){
 });
 
 
-var target = document.getElementById("triggerArea");
+// var target = document.getElementById("triggerArea");
 
-touch.on(target, 'swipeleft', function(ev){
-    $(".curfloor").eq(1).click();
-});
+// touch.on(target, 'swipeleft', function(ev){
+//     $(".curfloor").eq(1).click();
+// });
 
-touch.on(target, 'swiperight', function(ev){
-    $(".curfloor").eq(0).click();
-});
+// touch.on(target, 'swiperight', function(ev){
+//     $(".curfloor").eq(0).click();
+// });
 
 </script>
-
+<script src="js/hammer.js"></script>
+<script src="js/drag.js"></script>
 
 <script type="text/javascript">
 var _hmt = _hmt || [];
