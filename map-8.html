@@ -28,11 +28,20 @@
   display: inline-block;
   position: relative;
   height: auto;
+  margin: 0;
 }
 
 .mapcon img{
   width:98%;
+  display: inline-block;
+  float: left;
 }
+
+.imgAre{
+  float: left;
+  display: inline-block;
+}
+
   </style>
 </head>
 <body>
@@ -50,8 +59,10 @@
           <ul>
         </div>  
         <div class="mapcon floorChange" id="triggerArea">
+          <div class="imgAre">
           <img src="/images/map/map1-a.png" style="display:inline-block;" />
           <img src="/images/map/map1-b.png" />
+          </div>
         </div>
 
         <a href="javascript:history.go(-1);" class="prevBtn">上一页</a>
@@ -62,11 +73,15 @@
 <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript">
 ;(function($){
+    $(".imgAre").css("width",parseInt($(document).width())*2);
+    $(".imgAre img").css("width",$(document).width());
+
     $(window).load(function(){  
       $("#content").mCustomScrollbar({
           axis:"x",
           advanced:{autoExpandHorizontalScroll:true},
       }); 
+
     });
 })(jQuery);
 </script>
@@ -76,12 +91,18 @@ $(".curfloor").click(function(){
   $(".curfloor").removeClass("hover");
   $(this).addClass("hover");
   $('#content').mCustomScrollbar('scrollTo',$(this)); 
-  $(".floorChange img").hide();
+  
   if($(this).index()==0){
-    $(".floorChange img").eq($(this).index()).fadeIn();
+    $(".imgAre").animate({"margin-left":-$(document).width()*0},900);
   }else{
-    $(".floorChange img").eq(1).fadeIn();
-  }  
+    $(".imgAre").animate({"margin-left":-$(document).width()*1},900);
+  }
+  // $(".floorChange img").hide();
+  // if($(this).index()==0){
+  //   $(".floorChange img").eq($(this).index()).fadeIn();
+  // }else{
+  //   $(".floorChange img").eq(1).fadeIn();
+  // }  
 
 })
 
