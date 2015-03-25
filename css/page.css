@@ -357,12 +357,12 @@ html,body{
   line-height: 70px;
   font-size: 38px;
   text-align: center;
-  color: #ff0015;
+  color: #dd0330;
   background: #fff;
 }
 
 .floor li span.curfloor.hover{
-  background: #ff0015;
+  background: #dd0330;
   color: #fff;
 }
 
@@ -372,7 +372,7 @@ html,body{
   border-radius: 20px;
   line-height: 20px;
   text-align: center;
-  background: #ea0115;
+  background: #dd0330;
   position: absolute;
   left: -6px;
   top: -6px;
