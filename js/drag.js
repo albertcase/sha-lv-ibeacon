@@ -111,18 +111,11 @@
            if (isdrag){   
                var lval = tx + e.touches[0].pageX - x;  
                var tval = ty + e.touches[0].pageY - y; 
-               //$(".mapcon span").html("");
-               //$(".mapcon").append("<span style='font-size:20px; color:#f09; position:absolute; left:50px; top:100px; z-index:99;'>"+parseInt($("#hit").offset().top)+"</span>");
 
                
                 $("#hit").css("left",lval);  
                 $("#hit").css("top",tval);
                 
-                // if(parseInt($("#hit").offset().top) > 109 || parseInt($("#hit").offset().left) > 0){
-                //     $("#hit").css("left",0);  
-                //     $("#hit").css("top",0);
-                // }
-   
                return false;   
            }  
            
@@ -131,13 +124,10 @@
         function selectmouse(e){   
            isdrag = true;   
            tx = parseInt(document.getElementById("hit").style.left+0);   
+           console.log(tx)
            x = e.touches[0].pageX; 
            ty = parseInt(document.getElementById("hit").style.top+0);   
            y = e.touches[0].pageY;   
-           
-           // if(parseInt($("#hit").offset().top) > 109 || parseInt($("#hit").offset().left) > 0){
-           //          $("#hit").css("left",0);  
-           //          $("#hit").css("top",0);
-           //  }
+
            return false;   
         } 
