@@ -415,7 +415,9 @@ html,body{
   margin: 0;
 }
 
-
+#qrcodepage .logo{
+  margin: 10% 0 6% 0;
+}
 
 
 
