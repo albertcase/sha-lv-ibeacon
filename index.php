@@ -10,6 +10,8 @@ include_once('./config/uUid.php');
 $db = Pdb::getDb();
 $s = isset($_GET['s']) ? $_GET['s'] : "";
 $id = substr($s,4);
+if(!in_array($id, array('1','2','3','4','5','6','7','8','9','13','14','15','16','17','18')))
+    exit;
 if(isset($_COOKIE['lv_ibeacon_uuid'])){
     $uuid = $_COOKIE['lv_ibeacon_uuid'];
 }else{
