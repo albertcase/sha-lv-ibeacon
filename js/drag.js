@@ -124,9 +124,11 @@ function aa(){
      
     function selectmouse(e){   
        isdrag = true;   
-       tx = parseInt(document.getElementById("hit").style.left+0);   
+       //console.log($("#hit").css("left"))
+       tx = parseInt($("#hit").css("left")+0);  
+       console.log(tx) 
        x = e.touches[0].pageX; 
-       ty = parseInt(document.getElementById("hit").style.top+0);   
+       ty = parseInt($("#hit").css("top")+0);   
        y = e.touches[0].pageY;   
 
        return false;   

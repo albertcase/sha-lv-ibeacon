@@ -47,11 +47,25 @@
 
 .mapcon img{
   position: absolute;
-  left: 7%;
+  left: 0;
   top: 0;
 }
 
+.mapcon p:nth-child(1) img,.mapcon p:nth-child(1) img#hit{
+      position: absolute;
+      left: -167px;
+      top: 20px;
+      width: 160%;
+      height: auto;
+}
 
+.mapcon p:nth-child(2) img,.mapcon p:nth-child(2) img#hit{
+      position: absolute;
+      left: -100px;
+      top: -20px;
+      width: 167%;
+      height: auto;
+}
 
   </style>
 </head>
@@ -77,6 +91,10 @@
           <p>
           <img src="/images/map/map1-b.png" />
           </p>
+          </div>
+
+          <div class="floor_guide">
+               <img src="/images/map/b1-l1.png" />
           </div>
         </div>
 
@@ -114,9 +132,11 @@ $(".curfloor").click(function(){
   if($(this).index()==0){
     $(".imgArea").animate({"margin-left":-$(document).width()*0},900);
      $(".imgArea img").eq(0).attr("id","hit");
+     $(".floor_guide img").attr("src","/images/map/b1-l1.png");
   }else{
     $(".imgArea").animate({"margin-left":-$(document).width()*1},900);
     $(".imgArea img").eq(1).attr("id","hit");
+    $(".floor_guide img").attr("src","/images/map/l1.png");
   }
 
   aa();
