@@ -70,6 +70,7 @@ $finish = $rs ? 1 : 0;
   <script type="text/javascript" src="/js/touch.js"></script>
 </head>
 <body data-id="<?php echo $id;?>" data-finish="<?php echo $finish;?>" >
+<img src="/images/share.jpg" class="shareimg" />
 <div id="heng"></div>
 <!-- <span class="arr"></span> -->
 

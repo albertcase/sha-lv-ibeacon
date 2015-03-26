@@ -20,7 +20,7 @@ function aa(){
     mc.add(new Hammer.Pan({ threshold: 0, pointers: 0 }));
 
     mc.add(new Hammer.Swipe()).recognizeWith(mc.get('pan'));
-    //mc.add(new Hammer.Rotate({ threshold: 0 })).recognizeWith(mc.get('pan'));
+
     mc.add(new Hammer.Pinch({ threshold: 0 })).recognizeWith([mc.get('pan')]);
 
     mc.add(new Hammer.Tap({ event: 'doubletap', taps: 2 }));
@@ -47,7 +47,6 @@ function aa(){
 
     function updateElementTransform() {
         var value = [
-                    //'translate3d(' + transform.translate.x + 'px, ' + transform.translate.y + 'px, 0)',
                     'scale(' + transform.scale + ', ' + transform.scale + ')'
         ];
 
