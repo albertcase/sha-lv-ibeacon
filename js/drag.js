@@ -124,7 +124,6 @@ function aa(){
      
     function selectmouse(e){   
        isdrag = true;   
-       //console.log($("#hit").css("left"))
        tx = parseInt($("#hit").css("left")+0);  
        console.log(tx) 
        x = e.touches[0].pageX; 
